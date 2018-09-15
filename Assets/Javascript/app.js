@@ -19,29 +19,26 @@
 
 //CLOUDINARY PULL REQUEST
 
-var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dzphyexnz";
-var CLOUDINARY_UPLOAD_PRESET = 'uqgawuvl';
 
-var imgPreview = document.getElementById("img-preview");
-var fileUpload = document.getElementById("file-upload");
+window.ajaxSuccess = function () {
+	response = JSON.parse(this.responseText);
+  console.log("ajaxSuccess", typeof this.responseText);
+  document.getElementById('uploaded').setAttribute("src", response["secure_url"]);
+  document.getElementById('results').innerText = this.responseText;
+}
 
-fileUpload.addEventListener("change", function (event) {
-    var file = event.target.files[0];
-    var formData = new FormData();
-    formData.append('upload_present', CLOUDINARY_UPLOAD_PRESET);
-
-axios ({
-    url: CLOUDINARY_URL,
-    method: 'POST',
-    headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-    },
-    data: formData
-}).then(function(res) {
-    console.log(res);
-}).catch(function(err) {
-    console.log(err);
-});
-});
-
-
+window.AJAXSubmit = function (formElement) {
+  console.log("starting AJAXSubmit");
+  if (!formElement.action) { return; }
+  var xhr = new XMLHttpRequest();
+  xhr.upload.addEventListener('progress', (event) => {
+      console.log(event);     
+      if (event.lengthComputable) {      
+      document.getElementById('progress-bar').style.width = event.loaded / event.total 				* 100 + '%';
+      document.getElementById('progress-bar').innerHTML = event.loaded / event.total * 				100 + '%';
+      }
+    }, false);
+  xhr.onload = ajaxSuccess;
+  xhr.open("post", "https://api.cloudinary.com/v1_1/dzphyexnz/image/upload");
+  xhr.send(new FormData(formElement));
+}
