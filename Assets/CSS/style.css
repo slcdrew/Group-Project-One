@@ -1,0 +1,21 @@
+#image{
+    position: relative;
+    display: inline-block;
+    border: solid;
+    width: 1080px;
+    height: 1080px;
+    background: black;
+}
+#quotes{
+    position: relative;
+    display: inline-block;
+    width: 1080px;
+    height: 540px;
+    background: red;
+}
+
+@media only screen and (max-width: 1080px){
+    #image{
+        background: brown;
+    }
+}
