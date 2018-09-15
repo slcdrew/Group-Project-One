@@ -22,8 +22,6 @@ console.log(attrArray[7]);
 console.log("attribute array: ",attrArray);
 
 var queryURL = URL + APIkey + secretKey + faceTokens + returnAttributes;
-// var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=xZw11Mwma4o31epWqSrnYdxMVP2CQVw-&api_secret=XNA10V8mGxa4Hk03EU7TGZyKUZnkx6Hj&image_url=file:///C:/Users/owner/dev/fun/clock/images/kit-lens-blurry-background-portrait.jpg&return_attributes=emotion"
-// var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=xZw11Mwma4o31epWqSrnYdxMVP2CQVw-&api_secret=XNA10V8mGxa4Hk03EU7TGZyKUZnkx6Hj&image_url=http://f2f.org/wp-content/uploads/2015/03/meditationimage.jpg&return_attributes=emotion";
 console.log("queryURL",queryURL);
 
 var anger;
@@ -60,7 +58,7 @@ $.ajax({
         "disgust",
         "fear",
         "happiness",
-        "neutral",
+        "indifference",
         "sadness",
         "surprise"
     ]
@@ -70,4 +68,20 @@ $.ajax({
     console.log("max",max);
     console.log(indexMax);
     console.log(emotionArrayString[indexMax]);
+
+})
+
+var QURL = "http://quotes.rest/qod.json";
+// var category = "?category=" + emotionArrayString[indexMax];
+var category = "?category=" + "inspire";
+var QAPI = "&api_key=lUUqEhaz6FZnQ4lxr_WHoAeF";
+var QQURL = QURL + category + QAPI;
+$.ajax({
+    url: QQURL,
+    method: "GET"
+}).then(function(data){
+    console.log(data);
+
+
+
 })
