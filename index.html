@@ -10,17 +10,37 @@
     <link rel="stylesheet" href="./Assets/CSS/style.css">
 </head>
 <body>
-    
-    <h1>Test</h1>
+        <h1>Upload to Cloudinary with FormData</h1>
+        <div>
+        <p>
+        
+        </p>
+        </div>
+        
+        <div id="progress-bar"></div>  
+        
+        <form action="" method="post" enctype="multipart/form-data" onsubmit="AJAXSubmit(this); return false;">
+          <fieldset>
+            <legend>Upload example</legend>
+            <p>
+              <label for="upload_preset">Unsigned upload Preset: <input type="text" name="upload_preset">(set it <a href="https://cloudinary.com/console/settings/upload#upload_presets">here</a>)</label>
+            </p>
+            <p>
+              <label >Select your photo:
+              <input type="file" name="file"></label>
+            </p>
+            
+            <p>
+              <input type="submit" value="Submit" />
+            </p>
+            <img id="uploaded">
+            <div id="results"></div>
+          </fieldset>
+        </form>
+        
 
-    <div class="card">
-            <img src="http://fillmurray.com/g/300/300" id="img-preview" />
-            <label class="file-upload-container" for="file-upload">
-              <input id="file-upload" type="file" style="display:none;">
-              Select an Image
-            </label>
-          </div>
-
+           
+         
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="./Assets/Javascript/app.js"></script>
