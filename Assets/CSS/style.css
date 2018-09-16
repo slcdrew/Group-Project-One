@@ -1,4 +1,9 @@
-#image{
+.quote{
+    font-size: 32px;
+
+}
+
+/* #image{
     position: relative;
     display: inline-block;
     border: solid;
@@ -12,7 +17,7 @@
     width: 1080px;
     height: 540px;
     background: red;
-}
+} */
 
 @media only screen and (max-width: 1080px){
     #image{
