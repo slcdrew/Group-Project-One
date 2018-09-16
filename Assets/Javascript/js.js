@@ -1,7 +1,9 @@
 var URL = "https://api-us.faceplusplus.com/facepp/v3/detect";
 var APIkey = "?api_key=xZw11Mwma4o31epWqSrnYdxMVP2CQVw-";
 var secretKey = "&api_secret=XNA10V8mGxa4Hk03EU7TGZyKUZnkx6Hj";
-var faceTokens = "&image_url=" + "https://designyoutrust.com/wp-content/uploads/2018/06/0-24.jpg";
+var yourFace = "&image_url=";
+var yourMomsFace = "https://i1.wp.com/www.holidaymatinee.com/wp-content/uploads/2010/06/crying-children-jill-greenberg2.jpg?resize=540%2C644";
+var faceTokens = yourFace + yourMomsFace;
 var attrArray = [
     'gender',
     'age',
@@ -17,12 +19,15 @@ var attrArray = [
     'eyegaze',
     'skinstatus'
 ];
+
+
+
+
+
+
 var returnAttributes = "&return_attributes=" + attrArray;
-console.log(attrArray[7]);
-console.log("attribute array: ",attrArray);
 
 var queryURL = URL + APIkey + secretKey + faceTokens + returnAttributes;
-console.log("queryURL",queryURL);
 
 var anger;
 var disgust;
@@ -43,7 +48,6 @@ $.ajax({
     neutral = response.faces[0].attributes.emotion.neutral;
     sadness = response.faces[0].attributes.emotion.sadness;
     surprise = response.faces[0].attributes.emotion.surprise;
-    console.log("emotions",anger,disgust,fear,happiness,neutral,sadness,surprise);
     var emotionArray = [
         anger,
         disgust,
@@ -52,34 +56,36 @@ $.ajax({
         neutral,
         sadness,
         surprise
-    ]
+    ];
     var emotionArrayString = [
-        "anger",
-        "disgust",
-        "fear",
-        "happiness",
-        "indifference",
-        "sadness",
-        "surprise"
-    ]
-    console.log("array",emotionArray);
+        "angry",
+        "disgusted",
+        "afraid",
+        "happy",
+        "indifferent",
+        "sad",
+        "surprised"
+    ];
     var max = Math.max.apply(null,emotionArray);
     var indexMax = emotionArray.indexOf(max);
-    console.log("max",max);
-    console.log(indexMax);
-    console.log(emotionArrayString[indexMax]);
-
+    emotion = String(emotionArrayString[indexMax]);
+    secondCall(emotion);
 })
 
-var QURL = "http://quotes.rest/qod.json";
-// var category = "?category=" + emotionArrayString[indexMax];
-var category = "?category=" + "inspire";
-var QAPI = "&api_key=lUUqEhaz6FZnQ4lxr_WHoAeF";
-var QQURL = QURL + category + QAPI;
-$.ajax({
-    url: QQURL,
-    method: "GET"
-}).then(function(data){
-    console.log(data);
 
-})
+function secondCall(emotion){
+    var Qurl = "http://quotes.rest/quote/search.json";
+    var category = "?category=" + emotion;
+    var Qapi = "&api_key=lUUqEhaz6FZnQ4lxr_WHoAeF";
+    var QuQurl = Qurl + category + Qapi + "&maxlength=100";
+    $.ajax({
+        url: QuQurl,
+        method: "GET"
+    }).then(function(data){
+        console.log("quote data: ",data);
+        var quote1 = $("<p>");
+        quote1.addClass("quote");
+        quote1.text(data.contents.quote);
+        $("#quotes").append(quote1);
+    })
+}
