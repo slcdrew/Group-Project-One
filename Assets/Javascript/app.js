@@ -25,6 +25,7 @@ window.ajaxSuccess = function () {
   // console.log("ajaxSuccess", typeof this.responseText);
   // console.log("ajaxSuccess this", JSON.parse(this.response).secure_url);
   document.getElementById('uploaded').setAttribute("src", response["secure_url"]);
+  document.getElementById('uploaded').style.border = "10px solid black";
   // document.getElementById('results').innerText = this.responseText;
   faceQuote(JSON.parse(this.response).secure_url);
 }
@@ -35,8 +36,8 @@ window.AJAXSubmit = function (formElement) {
   var xhr = new XMLHttpRequest();
   xhr.upload.addEventListener('progress', (event) => {
       if (event.lengthComputable) {      
-      document.getElementById('progress-bar').style.width = event.loaded / event.total 				* 100 + '%';
-      document.getElementById('progress-bar').innerHTML = event.loaded / event.total * 				100 + '%';
+      document.getElementById('progress-bar').style.width = event.loaded / event.total * 100 + '%';
+      document.getElementById('progress-bar').innerHTML = event.loaded / event.total * 100 + '%';
       }
     }, false);
   xhr.onload = ajaxSuccess;
