@@ -1,16 +1,42 @@
 .progress-bar{
     color: white;
     background-color: black;
+    display: non
     /* temporary styling */
 }
 
 .quote{
     font-size: 32px;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
-#uploaded{
-    width: 800px;
+p {
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+#file {
+    color: blue;
+}
+
+body {
+    background-image: url("../Images/Quote\ Me\ background.jpg");
+    /* font-family: 'Shadows Into Light Two', cursive; */
+    background-size: cover;
+}
+
+#uploaded {
+    width: 400px;
+
+    /* border: solid 5px black; */
+}
+
+
+
+input[type="file"] {
+    display: none;
 }
 /* #image{
     position: relative;
