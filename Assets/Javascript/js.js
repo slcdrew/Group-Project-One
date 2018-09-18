@@ -44,7 +44,7 @@ function faceQuote(yourMomsFace){
         neutral = response.faces[0].attributes.emotion.neutral;
         sadness = response.faces[0].attributes.emotion.sadness;
         surprise = response.faces[0].attributes.emotion.surprise;
-        console.log("emotions",anger,disgust,fear,happiness,neutral,sadness,surprise);
+        console.log("emotions: anger",anger,"disgust",disgust,"fear",fear,"happiness",happiness,"neutral",neutral,"sadness",sadness,"surprise",surprise);
         var emotionArray = [
             anger,
             disgust,
@@ -64,27 +64,97 @@ function faceQuote(yourMomsFace){
             "surprise"
         ]
 
-// http://quotes.rest/quote/search?category=anger&minlength=100&maxlength=300&private=false
+        var synAnger = [
+            "jealousy",
+            "spite",
+            "hatred",
+            "outrage",
+            "rage"
+        ]
+        var synDisgust = [
+            "disgust",
+            "sick",
+            "gross",
+            "disturbed",
+            "dislike"
+        ]
+        var synFear = [
+            "anxiety",
+            "doubt",
+            "terror",
+            "worry",
+            "concern"
+        ]
+        var synHappiness = [
+            "joy",
+            "bliss",
+            "delight",
+            "euphoria",
+            "pleasure"
+        ]
+        var synInspire = [
+            "excitement",
+            "gratitude",
+            "success",
+            "enlightenment",
+            "impression"
+        ]
+        var synSadness = [
+            "sorrow",
+            "depression",
+            "worry",
+            "heartache",
+            "remorse"
+        ]
+        var synSurprise = [
+            "amazement",
+            "shock",
+            "epiphany",
+            "wow",
+            "bewilderment"
+        ]
 
+        var emotionSynonymArray = [
+            synAnger,
+            synDisgust,
+            synFear,
+            synHappiness,
+            synInspire,
+            synSadness,
+            synSurprise
+        ]
+
+        
         var max = Math.max.apply(null,emotionArray);
         var indexMax = emotionArray.indexOf(max);
-        console.log("emotion",indexMax,emotionArrayString[indexMax]);
-        category = "?category=" + emotionArrayString[indexMax];
-        var Qurl = "http://quotes.rest/quote/search";
-        var Qapi = "&api_key=lUUqEhaz6FZnQ4lxr_WHoAeF";
-        var maxLength = 100;
-        var Qlength = "&maxlength=" + maxLength;
-        var QQurl = Qurl + category + Qapi + Qlength;
-        $.ajax({
-            url: QQurl,
-            method: "GET"
-        }).then(function(data){
-            console.log("data",data.contents.quote);
-            finalQuote = $("<p>");
-            finalQuote.addClass("quote");
-            finalQuote.text(data.contents.quote);
-            $("#quotes").append(finalQuote);
-    
-        })
+        console.log("indexMax",indexMax);
+        var emo = emotionArrayString[indexMax];
+        console.log("emo",emo);
+        var categoryData = emotionSynonymArray[indexMax];
+        console.log(emotionSynonymArray[indexMax]);
+        
+        for(i=0; i<5; i++){
+            var category = "?category=" + categoryData[i];
+            var Qurl = "http://quotes.rest/quote/search";
+            var Qapi = "&api_key=lUUqEhaz6FZnQ4lxr_WHoAeF";
+            var maxLength = 100;
+            var Qlength = "&maxlength=" + maxLength;
+            var QQurl = Qurl + category + Qapi + Qlength;
+            $.ajax({
+                url: QQurl,
+                method: "GET"
+            }).then(function(data){
+                console.log("data",data.contents.quote);
+                finalQuote = $("<p>");
+                finalQuote.addClass("quote");
+                finalQuote.text(data.contents.quote);
+                $("#quotes").append(finalQuote);
+        
+            })
+
+        }
+
+
+
     })
 }
