@@ -1,4 +1,32 @@
 
+// window.ajaxSuccess = function () {
+//     console.log(this.responseText)
+// 	response = JSON.parse(this.responseText);
+//   // console.log("ajaxSuccess", typeof this.responseText);
+//   // console.log("ajaxSuccess this", JSON.parse(this.response).secure_url);
+//   document.getElementById('uploaded').setAttribute("src", response["secure_url"]);
+//   document.getElementById('uploaded').style.border = "10px solid black";
+//   // document.getElementById('results').innerText = this.responseText;
+//   faceQuote(JSON.parse(this.response).secure_url);
+// }
+
+// window.AJAXSubmit = function (formElement) {
+//   // console.log("starting AJAXSubmit");
+//   console.log(formElement)
+//   if (!formElement.action) { return; }
+//   var xhr = new XMLHttpRequest();
+//   xhr.upload.addEventListener('progress', (event) => {
+//       if (event.lengthComputable) {      
+//       document.getElementById('progress-bar').style.width = event.loaded / event.total * 100 + '%';
+//       document.getElementById('progress-bar').innerHTML = event.loaded / event.total * 100 + '%';
+//       }
+//     }, false);
+//   xhr.onload = ajaxSuccess;
+//   xhr.open("post", "https://api.cloudinary.com/v1_1/dzphyexnz/image/upload");
+//   xhr.send(new FormData(formElement));
+//   // console.log("formElement",$(formElement));
+  
+// }
 function faceQuote(yourMomsFace){
     var URL = "https://api-us.faceplusplus.com/facepp/v3/detect";
     var APIkey = "?api_key=xZw11Mwma4o31epWqSrnYdxMVP2CQVw-";
@@ -154,7 +182,39 @@ function faceQuote(yourMomsFace){
 
         }
 
-
-
     })
 }
+
+
+
+var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dzphyexnz/image/upload";
+var CLOUDINARY_UPLOAD_PRESET = "uqgawuvl";
+
+var imgPreview = document.getElementById('jobImage2');
+var fileUpload = document.getElementById("input");
+
+fileUpload.addEventListener('change', function (event) {
+    var file = event.target.files[0];
+    var formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+    axios({
+        url: CLOUDINARY_URL,
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data: formData
+    }).then(function (res) {
+        console.log(res);
+        document.getElementById('uploaded').setAttribute("src", res.data["secure_url"]);
+        document.getElementById('uploaded').style.border = "10px solid black";
+        // document.getElementById('results').innerText = this.responseText;
+
+        faceQuote(res.data.secure_url)
+        
+    }).catch(function (err) {
+        console.error(err);
+    });
+});

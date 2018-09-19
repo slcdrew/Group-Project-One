@@ -20,28 +20,39 @@
 //CLOUDINARY PULL REQUEST
 
 
-window.ajaxSuccess = function () {
-	response = JSON.parse(this.responseText);
-  // console.log("ajaxSuccess", typeof this.responseText);
-  // console.log("ajaxSuccess this", JSON.parse(this.response).secure_url);
-  document.getElementById('uploaded').setAttribute("src", response["secure_url"]);
-  document.getElementById('uploaded').style.border = "10px solid black";
-  // document.getElementById('results').innerText = this.responseText;
-  faceQuote(JSON.parse(this.response).secure_url);
-}
+// window.ajaxSuccess = function () {
+// 	response = JSON.parse(this.responseText);
+//   // console.log("ajaxSuccess", typeof this.responseText);
+//   // console.log("ajaxSuccess this", JSON.parse(this.response).secure_url);
+//   document.getElementById('uploaded').setAttribute("src", response["secure_url"]);
+//   document.getElementById('uploaded').style.border = "10px solid black";
+//   // document.getElementById('results').innerText = this.responseText;
+//   faceQuote(JSON.parse(this.response).secure_url);
+// }
 
-window.AJAXSubmit = function (formElement) {
-  // console.log("starting AJAXSubmit");
-  if (!formElement.action) { return; }
-  var xhr = new XMLHttpRequest();
-  xhr.upload.addEventListener('progress', (event) => {
-      if (event.lengthComputable) {      
-      document.getElementById('progress-bar').style.width = event.loaded / event.total * 100 + '%';
-      document.getElementById('progress-bar').innerHTML = event.loaded / event.total * 100 + '%';
-      }
-    }, false);
-  xhr.onload = ajaxSuccess;
-  xhr.open("post", "https://api.cloudinary.com/v1_1/dzphyexnz/image/upload");
-  xhr.send(new FormData(formElement));
-  // console.log("formElement",$(formElement));
-}
+// window.AJAXSubmit = function (formElement) {
+//   // console.log("starting AJAXSubmit");
+//   if (!formElement.action) { return; }
+//   var xhr = new XMLHttpRequest();
+//   xhr.upload.addEventListener('progress', (event) => {
+//       if (event.lengthComputable) {      
+//       document.getElementById('progress-bar').style.width = event.loaded / event.total * 100 + '%';
+//       document.getElementById('progress-bar').innerHTML = event.loaded / event.total * 100 + '%';
+//       }
+//     }, false);
+//   xhr.onload = ajaxSuccess;
+//   xhr.open("post", "https://api.cloudinary.com/v1_1/dzphyexnz/image/upload");
+//   xhr.send(new FormData(formElement));
+//   // console.log("formElement",$(formElement));
+  
+// }
+
+// $ajax({
+//   url: "https://api.cloudinary.com/v1_1/dzphyexnz/image/upload",
+//   method: "POST",
+//   data: {
+
+//   }
+// }).then(function(event){
+
+// })
