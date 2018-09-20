@@ -6,10 +6,9 @@
 }
 
 .quote{
-    font-size: 32px;
+    font-size: 20px;
     color: black;
     font-family: 'Montserrat', sans-serif;
-
 }
 
 p {
@@ -26,6 +25,22 @@ p {
 }
 
 .angleTitle {
+
+    z-index: 1;
+    position: absolute;
+    /* margin-bottom: 120px; */
+    margin-top: -80px;
+    margin-left: -60px;
+    display: none; 
+}
+
+/* 
+.polaroid {
+width: 575px;
+position: static;
+z-index: 0;
+}
+
 
     z-index: 1;
     position: absolute;
@@ -50,6 +65,7 @@ z-index: 0;
     position: absolute;
     /* margin-left: 0;
     margin-top: 20px; */
+
 
 */
 
@@ -134,4 +150,37 @@ input[type="file"] {
     #image{
         background: brown;
     }
+}
+
+.homemadeApple{
+    font-family: 'Homemade Apple', cursive;
+    font-size: 48px;
+}
+.girlNextDoor{
+    font-family: 'The Girl Next Door', cursive;
+    font-size: 48px;
+}
+.princessSofia{
+    font-family: 'Princess Sofia', cursive;
+    font-size: 48px;
+}
+.zeyada{
+    font-family: 'Zeyada', cursive;
+    font-size: 48px;
+}
+.haviland{
+    font-family: 'Mr De Haviland', cursive;
+    font-size: 48px;
+}
+.muellerhoff{
+    font-family: 'Herr Von Muellerhoff', cursive;
+    font-size: 48px;
+}
+.cedarville{
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 48px;
+}
+.indieFlower{
+    font-family: 'Indie Flower', cursive;
+    font-size: 48px;
 }
