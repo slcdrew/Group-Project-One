@@ -148,7 +148,6 @@ function faceQuote(yourMomsFace){
                 finalQuote.addClass("quote");
                 finalQuote.text(data.contents.quote);
                 $("#quotes").append(finalQuote);
-        
             })
 
         }
@@ -179,10 +178,14 @@ fileUpload.addEventListener('change', function (event) {
         data: formData
     }).then(function (res) {
         console.log(res);
-        document.getElementById('uploaded').setAttribute("src", res.data["secure_url"]);
-        document.getElementById('uploaded').style.border = "2px solid black";
+        // document.getElementById('uploaded').setAttribute("src", res.data["secure_url"]);
+        // document.getElementById('uploaded').style.border = "2px solid black";
+        $("#uploaded").attr("src", res.data["secure_url"]);
+        $(".container2").hide();
+        $(".selectBtn").hide();
+        $("#angleTitle").show();
+        $(".picContainer").show();
         // document.getElementById('results').innerText = this.responseText;
-
         faceQuote(res.data.secure_url)
         
     }).catch(function (err) {
@@ -191,6 +194,14 @@ fileUpload.addEventListener('change', function (event) {
 });
 
 
-$(".selectBtn").on("click", function() {
-$(".angleTitle").show()
-});
+$(".start").on("click", function () {
+    $(".start").hide();
+    $(".container2").show();
+    $(".selectBtn").show();
+})
+
+// $(".selectBtn").on("click", function() {
+//     $("#angleTitle").show();
+//     $(".picContainer").show();
+// });
+
