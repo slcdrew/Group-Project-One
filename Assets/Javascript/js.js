@@ -1,32 +1,3 @@
-
-// window.ajaxSuccess = function () {
-//     console.log(this.responseText)
-// 	response = JSON.parse(this.responseText);
-//   // console.log("ajaxSuccess", typeof this.responseText);
-//   // console.log("ajaxSuccess this", JSON.parse(this.response).secure_url);
-//   document.getElementById('uploaded').setAttribute("src", response["secure_url"]);
-//   document.getElementById('uploaded').style.border = "10px solid black";
-//   // document.getElementById('results').innerText = this.responseText;
-//   faceQuote(JSON.parse(this.response).secure_url);
-// }
-
-// window.AJAXSubmit = function (formElement) {
-//   // console.log("starting AJAXSubmit");
-//   console.log(formElement)
-//   if (!formElement.action) { return; }
-//   var xhr = new XMLHttpRequest();
-//   xhr.upload.addEventListener('progress', (event) => {
-//       if (event.lengthComputable) {      
-//       document.getElementById('progress-bar').style.width = event.loaded / event.total * 100 + '%';
-//       document.getElementById('progress-bar').innerHTML = event.loaded / event.total * 100 + '%';
-//       }
-//     }, false);
-//   xhr.onload = ajaxSuccess;
-//   xhr.open("post", "https://api.cloudinary.com/v1_1/dzphyexnz/image/upload");
-//   xhr.send(new FormData(formElement));
-//   // console.log("formElement",$(formElement));
-  
-// }
 function faceQuote(yourMomsFace){
     var URL = "https://api-us.faceplusplus.com/facepp/v3/detect";
     var APIkey = "?api_key=xZw11Mwma4o31epWqSrnYdxMVP2CQVw-";
@@ -209,7 +180,7 @@ fileUpload.addEventListener('change', function (event) {
     }).then(function (res) {
         console.log(res);
         document.getElementById('uploaded').setAttribute("src", res.data["secure_url"]);
-        document.getElementById('uploaded').style.border = "10px solid black";
+        document.getElementById('uploaded').style.border = "2px solid black";
         // document.getElementById('results').innerText = this.responseText;
 
         faceQuote(res.data.secure_url)
@@ -217,4 +188,9 @@ fileUpload.addEventListener('change', function (event) {
     }).catch(function (err) {
         console.error(err);
     });
+});
+
+
+$(".selectBtn").on("click", function() {
+$(".angleTitle").show()
 });
