@@ -132,6 +132,8 @@ function faceQuote(yourMomsFace){
 			var categoryData = emotionSynonymArray[indexMax];
 			console.log(emotionSynonymArray[indexMax]);
 			
+			var fiveQuotes = []
+
 			for(i=0; i<5; i++){
 					var category = "?category=" + categoryData[i];
 					var Qurl = "http://quotes.rest/quote/search";
@@ -144,16 +146,20 @@ function faceQuote(yourMomsFace){
 							method: "GET"
 					}).then(function(data){
 							console.log("data",data.contents.quote);
-							finalQuote = $("<p>");
-							finalQuote.addClass("quote");
-							finalQuote.text(data.contents.quote);
-							$("#quotes").append(finalQuote);
-			
+							fiveQuotes.push("quote")
+							if (fiveQuotes.length === 5) {
+								showQuote (fiveQuotes [0])
+							}
 					})
-
-			}
-
+			}			
 	})
+
+	function showQuote (quoteText) {
+			finalQuote = $("<p>");
+			finalQuote.addClass("quote");
+			finalQuote.text(quoteText);
+			$("#quotes").html(finalQuote);
+	}
 }
 
 
