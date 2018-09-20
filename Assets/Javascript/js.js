@@ -132,35 +132,36 @@ function faceQuote(yourMomsFace){
 			var categoryData = emotionSynonymArray[indexMax];
 			console.log(emotionSynonymArray[indexMax]);
 			
-			var fiveQuotes = []
-
+			
 			for(i=0; i<5; i++){
-					var category = "?category=" + categoryData[i];
-					var Qurl = "http://quotes.rest/quote/search";
-					var Qapi = "&api_key=lUUqEhaz6FZnQ4lxr_WHoAeF";
-					var maxLength = 100;
-					var Qlength = "&maxlength=" + maxLength;
-					var QQurl = Qurl + category + Qapi + Qlength;
-					$.ajax({
-							url: QQurl,
-							method: "GET"
-					}).then(function(data){
-							console.log("data",data.contents.quote);
-							fiveQuotes.push("quote")
-							if (fiveQuotes.length === 5) {
-								showQuote (fiveQuotes [0])
-							}
-					})
+				var category = "?category=" + categoryData[i];
+				var Qurl = "http://quotes.rest/quote/search";
+				var Qapi = "&api_key=lUUqEhaz6FZnQ4lxr_WHoAeF";
+				var maxLength = 100;
+				var Qlength = "&maxlength=" + maxLength;
+				var QQurl = Qurl + category + Qapi + Qlength;
+				$.ajax({
+					url: QQurl,
+					method: "GET"
+				}).then(function(data){
+					console.log("data",data.contents.quote);
+					fiveQuotes.push("")
+					if (fiveQuotes.length === 5) {
+						showQuote (fiveQuotes [0])
+					}
+				})
 			}			
-	})
-
-	function showQuote (quoteText) {
+		})
+		
+		function showQuote (quoteText) {
 			finalQuote = $("<p>");
 			finalQuote.addClass("quote");
 			finalQuote.text(quoteText);
 			$("#quotes").html(finalQuote);
+		}
 	}
-}
+
+	var fiveQuotes = []
 
 
 
