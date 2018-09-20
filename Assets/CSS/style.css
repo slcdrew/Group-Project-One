@@ -1,3 +1,17 @@
+p {
+    font-family: 'Indie Flower', cursive;
+}
+
+body {
+    background-image: url("../Images/Quote\ Me\ background.jpg");
+    background-size: cover;
+}
+
+
+input[type="file"] {
+    display: none;
+}
+
 .progress-bar{
     color: white;
     background-color: black;
@@ -6,83 +20,31 @@
 }
 
 .quote{
-    font-size: 20px;
+    font-size: 32px;
     color: black;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Indie Flower', cursive;
 }
-
-p {
-    font-family: 'Montserrat', sans-serif;
-}
-/* 
-.container2 {
-    background-color: blue;
-} */
 
 .picContainer {
     margin-top: 20px;
     position: static;
-}
-
-.angleTitle {
-
-    z-index: 1;
-    position: absolute;
-    /* margin-bottom: 120px; */
-    margin-top: -80px;
-    margin-left: -60px;
     display: none; 
 }
 
-/* 
-.polaroid {
-width: 575px;
-position: static;
-z-index: 0;
-}
 
-
-    z-index: 1;
-    position: absolute;
-    /* margin-bottom: 120px; */
-    margin-top: -80px;
-    margin-left: -60px;
+.container2 {
     display: none;
-    
+    font-family: 'Indie Flower', cursive;
+    font-size: 72px;
+} 
+
+.selectBtn {
+    display: none;
 }
 
-/* 
-.polaroid {
-width: 575px;
-position: static;
-z-index: 0;
-}
-
-
-#uploaded {
-    width: 400px;
-    z-index: 10;
-    position: absolute;
-    /* margin-left: 0;
-    margin-top: 20px; */
-
-
-*/
-
-
-#file {
-    color: blue;
-}
-
-body {
-    background-image: url("../Images/Quote\ Me\ background.jpg");
-    /* font-family: 'Shadows Into Light Two', cursive; */
-    background-size: cover;
-}
 
 
 .polaroid {
-    /* width: 50%; */
     background-color: white;
     margin: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -97,6 +59,39 @@ body {
     padding: 10px 20px;
   }
 
+#angleTitle {
+    z-index: 1;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: -60px;
+    display: none; 
+    width: 275px;
+}
+
+#file {
+    color: blue;
+}
+
+@media only screen and (max-width: 1080px){
+    #image{
+        background: brown;
+    }
+}
+
+
+/* 
+.polaroid {
+width: 575px;
+position: static;
+z-index: 0;
+}
+
+#uploaded {
+    width: 400px;
+    z-index: 10;
+    position: absolute;
+    /* margin-left: 0;
+    margin-top: 20px; *
 /* #uploaded
 {
 
@@ -127,9 +122,8 @@ body {
 
 
 
-input[type="file"] {
-    display: none;
-}
+
+
 /* #image{
     position: relative;
     display: inline-block;
@@ -146,41 +140,3 @@ input[type="file"] {
     background: red;
 } */
 
-@media only screen and (max-width: 1080px){
-    #image{
-        background: brown;
-    }
-}
-
-.homemadeApple{
-    font-family: 'Homemade Apple', cursive;
-    font-size: 48px;
-}
-.girlNextDoor{
-    font-family: 'The Girl Next Door', cursive;
-    font-size: 48px;
-}
-.princessSofia{
-    font-family: 'Princess Sofia', cursive;
-    font-size: 48px;
-}
-.zeyada{
-    font-family: 'Zeyada', cursive;
-    font-size: 48px;
-}
-.haviland{
-    font-family: 'Mr De Haviland', cursive;
-    font-size: 48px;
-}
-.muellerhoff{
-    font-family: 'Herr Von Muellerhoff', cursive;
-    font-size: 48px;
-}
-.cedarville{
-    font-family: 'Cedarville Cursive', cursive;
-    font-size: 48px;
-}
-.indieFlower{
-    font-family: 'Indie Flower', cursive;
-    font-size: 48px;
-}
