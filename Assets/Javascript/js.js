@@ -179,7 +179,7 @@ fileUpload.addEventListener('change', function (event) {
     }).then(function (res) {
         console.log(res);
         // document.getElementById('uploaded').setAttribute("src", res.data["secure_url"]);
-        // document.getElementById('uploaded').style.border = "2px solid black";
+        document.getElementById('uploaded').style.border = "2px solid black";
         $("#uploaded").attr("src", res.data["secure_url"]);
         $(".container2").hide();
         $(".selectBtn").hide();
@@ -196,7 +196,7 @@ fileUpload.addEventListener('change', function (event) {
 
 $(".start").on("click", function () {
     $(".start").hide();
-    $(".container2").show();
+    $(".next").show();
     $(".selectBtn").show();
 })
 

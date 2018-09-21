@@ -32,18 +32,24 @@ input[type="file"] {
 }
 
 
-.container2 {
+/* .container2 {
     display: none;
     font-family: 'Indie Flower', cursive;
     font-size: 72px;
-} 
+}  */
 
 .selectBtn {
     display: none;
 }
 
+.next {
+    /* display: none; */
+    width: 700px;
+}
 
-
+.start {
+    width: 700px;
+}
 .polaroid {
     background-color: white;
     margin: auto;
@@ -72,11 +78,11 @@ input[type="file"] {
     color: blue;
 }
 
-@media only screen and (max-width: 1080px){
+/* @media only screen and (max-width: 1080px){
     #image{
         background: brown;
     }
-}
+} */
 
 
 /* 
