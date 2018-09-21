@@ -81,7 +81,7 @@ function faceQuote(yourMomsFace) {
 
         for (i = 0; i < 5; i++) {
             var category = "?category=" + categoryData[i];
-            var Qurl = "http://quotes.rest/quote/search";
+            var Qurl = "https://quotes.rest/quote/search";
             var Qapi = "&api_key=lUUqEhaz6FZnQ4lxr_WHoAeF";
             var maxLength = 100;
             var Qlength = "&maxlength=" + maxLength;
