@@ -1,27 +1,14 @@
-p {
-    font-family: 'Indie Flower', cursive;
-}
-
 body {
-    background-image: url("../Images/Quote\ Me\ background.jpg");
-    background-size: cover;
+    background-image: url("../Images/Quote\ Me\ background2.jpg");
+    background-size: cover;  
 }
-
 
 input[type="file"] {
     display: none;
 }
 
-.quote{
-    font-size: 32px;
-    color: black;
+p {
     font-family: 'Indie Flower', cursive;
-}
-
-.picContainer {
-    margin-top: 20px;
-    position: static;
-    display: none; 
 }
 
 .emailValidation {
@@ -33,18 +20,15 @@ input[type="file"] {
     width: 50%;
 }
 
-.selectBtn {
-    display: none;
-}
-
 .next {
     width: 700px;
     cursor: pointer;
 }
 
-.start {
-    width: 700px;
-    cursor: pointer;
+.picContainer {
+    margin-top: 20px;
+    position: static;
+    display: none; 
 }
 
 .polaroid {
@@ -61,6 +45,28 @@ input[type="file"] {
     padding: 10px 10px;
   }
 
+
+.quote{
+    font-size: 32px;
+    color: black;
+    font-family: 'Indie Flower', cursive;
+}
+
+.reset {
+    display: none;
+    padding: 10px;
+}
+
+.selectBtn {
+    display: none;
+}
+
+.start {
+    width: 700px;
+    cursor: pointer;
+}
+
+
 #angleTitle {
     z-index: 1;
     position: absolute;
@@ -74,6 +80,3 @@ input[type="file"] {
     visibility: hidden;
 }
 
-/* #file {
-    color: blue;
-} */
