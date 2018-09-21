@@ -1,92 +1,56 @@
-.progress-bar{
-    color: white;
-    background-color: black;
-    display: non
-    /* temporary styling */
-}
-
-.quote{
-    font-size: 20px;
-    color: black;
-    font-family: 'Montserrat', sans-serif;
-}
-
 p {
-    font-family: 'Montserrat', sans-serif;
-}
-/* 
-.container2 {
-    background-color: blue;
-} */
-
-.picContainer {
-    margin-top: 20px;
-    position: static;
-}
-
-.angleTitle {
-
-    z-index: 1;
-    position: absolute;
-    /* margin-bottom: 120px; */
-    margin-top: -80px;
-    margin-left: -60px;
-    display: none; 
-}
-
-/* 
-.polaroid {
-width: 575px;
-position: static;
-z-index: 0;
-}
-
-
-    z-index: 1;
-    position: absolute;
-    /* margin-bottom: 120px; */
-    margin-top: -80px;
-    margin-left: -60px;
-    display: none;
-    
-}
-
-/* 
-.polaroid {
-width: 575px;
-position: static;
-z-index: 0;
-}
-
-
-#uploaded {
-    width: 400px;
-    z-index: 10;
-    position: absolute;
-    /* margin-left: 0;
-    margin-top: 20px; */
-
-
-*/
-
-
-#file {
-    color: blue;
+    font-family: 'Indie Flower', cursive;
 }
 
 body {
     background-image: url("../Images/Quote\ Me\ background.jpg");
-    /* font-family: 'Shadows Into Light Two', cursive; */
     background-size: cover;
 }
 
 
+input[type="file"] {
+    display: none;
+}
+
+.quote{
+    font-size: 32px;
+    color: black;
+    font-family: 'Indie Flower', cursive;
+}
+
+.picContainer {
+    margin-top: 20px;
+    position: static;
+    display: none; 
+}
+
+.emailValidation {
+    margin-top: 250px;
+    font-size: 50px;
+}
+
+.form-control {
+    width: 50%;
+}
+
+.selectBtn {
+    display: none;
+}
+
+.next {
+    width: 700px;
+    cursor: pointer;
+}
+
+.start {
+    width: 700px;
+    cursor: pointer;
+}
+
 .polaroid {
-    /* width: 50%; */
     background-color: white;
     margin: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 25px;
     padding: 30px;
     width: 600px;
     z-index: 0;
@@ -94,62 +58,20 @@ body {
 
 .quoteContainer {
     text-align: center;
-    padding: 10px 20px;
+    padding: 10px 10px;
   }
 
-/* #uploaded
-{
-
-    width: 50%;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 25px;
-    padding: 20px; */
-    
-    /* background: white;
-	display: inline;
-	/* float: left; */
-	/* margin: 20 15px 30px;
-	padding: 30px 30px 80px 30px;
-	text-align: center;
-	text-decoration: none; */
-	/* -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-	-moz-box-shadow: 0 4px 6px rgba(0,0,0,.3); */
-	/* box-shadow: 0 4px 6px rgba(0,0,0,.3); */
-	/* -webkit-transition: all .15s linear;
-	-moz-transition: all .15s linear; */
-	/* transition: all .15s linear;
-    z-index:0;
-    width: 500px; */ 
-/* } */
-
-    /* border: solid 5px black; */
-
-
-
-input[type="file"] {
-    display: none;
+#angleTitle {
+    z-index: 1;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: -60px;
+    display: none; 
+    width: 275px;
 }
-/* #image{
-    position: relative;
-    display: inline-block;
-    border: solid;
-    width: 1080px;
-    height: 1080px;
-    background: black;
-}
-#quotes{
-    position: relative;
-    display: inline-block;
-    width: 1080px;
-    height: 540px;
-    background: red;
-} */
 
-@media only screen and (max-width: 1080px){
-    #image{
-        background: brown;
-    }
+#nextButton, #backButton {
+    visibility: hidden;
 }
 
 
@@ -157,3 +79,6 @@ input[type="file"] {
     font-family: 'Indie Flower', cursive;
     font-size: 48px;
 }
+/* #file {
+    color: blue;
+} */

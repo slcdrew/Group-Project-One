@@ -1,69 +1,117 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Quote Me Validate Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quote Me Validate Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./Assets/CSS/style.css">
 </head>
+
 <body>
-        <!-- <form id="form" action="./index.html"> -->
-      <form id="form"></form>
-      <h5>Please enter a valid email address to continue.</h5>
+  <!-- <form id="form" action="./index.html"> -->
 
-              <div id="emailDiv" class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+  <div class="container">
+    <form id="form"></form>
+    <div class="row">
+      <div class="col-lg-12 ">
+        <h2 class="emailValidation">Please enter a valid email address to continue to Quote Me</h2>
+        <br>
+      </div>
+    </div>
 
-              </div>
-              <!-- NOT using a password -->
-              <!-- <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-              </div> -->
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-              </div>
-              <button id="myButton" type="submit" class="btn btn-primary">
-              <a href ="./code.html"></a>
-              Submit
-              </button>
-                
-        </form>
+    <div class="row">
+      <div class="col-lg-12">
+        <div id="emailDiv" class="form-group">
+          <label for="exampleInputEmail1" class="text-center">
+            <h4>Email address</h4>
+          </label>
+          <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+      </div>
+    </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- <script src="./main.js"></script> -->
+    <button id="myButton" type="submit" class="btn btn-dark">
+      <a href="./code.html"></a>
+      Submit
+    </button>
 
-        <script>
+    <div class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Error</h5>
+            <button type="button" id="closeModalX" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5>Please enter a valid email address.</h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="closeModal" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        $("#myButton").on("click", function(event) {
-            event.preventDefault()
+    </form>
+  </div>
 
-            var email = $("#InputEmail").val();
 
-            function validateEmail(email) {
-                    var re = /\S+@\S+\.\S+/;
-                    return re.test(email);
-            }
-            
-            if (validateEmail(email)) {
-                window.location.href = "./code.html";
-                
-            }else {
-                alert("Fill the form out");
-                return false;
-                // href =("./index.html");
-                // window.location.assign("./index.html");
-                // window.location.replace("./index.html");
-                console.log(window.location)
-                //need to transfer to index.html here
-            }
-          });
-         
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- <script src="./main.js"></script> -->
 
-    </script>
+  <script>
+
+    $("#myButton").on("click", function (event) {
+      event.preventDefault()
+
+      var email = $("#InputEmail").val();
+
+      function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+      }
+
+      if (validateEmail(email)) {
+        $(".modal").css("display", "none")
+        window.location.href = "./code.html";
+
+      } else {
+        $(".modal").css("display", "block")
+
+
+
+        // alert("Fill the form out");
+        return false;
+        // href =("./index.html");
+        // window.location.assign("./index.html");
+        // window.location.replace("./index.html");
+        console.log(window.location)
+        //need to transfer to index.html here
+      }
+    });
+
+    $("#closeModal").on("click", function (event) {
+      console.log("closed button clicked");
+      $(".modal").css("display", "none")
+    })
+
+    $("#closeModalX").on("click", function (event) {
+      console.log("closed button clicked");
+      $(".modal").css("display", "none")
+    })
+
+
+  </script>
+
+
+
 </body>
+
 </html>
