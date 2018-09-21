@@ -74,6 +74,11 @@ input[type="file"] {
     visibility: hidden;
 }
 
+
+.indieFlower{
+    font-family: 'Indie Flower', cursive;
+    font-size: 48px;
+}
 /* #file {
     color: blue;
 } */

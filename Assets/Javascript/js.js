@@ -91,7 +91,7 @@ function faceQuote(yourMomsFace) {
                 method: "GET"
             }).then(function (data) {
                 console.log("data", data.contents.quote);
-                fiveQuotes.push(data.contents.quote)
+                fiveQuotes.push('" ' + data.contents.quote + '"   -' + data.contents.author)
                 if (fiveQuotes.length === 4) {
                     showQuote(fiveQuotes[0])
                 }
@@ -120,7 +120,7 @@ function faceQuote(yourMomsFace) {
     function showQuote(quoteText) {
         finalQuote = $("<p>");
         finalQuote.addClass("quote");
-        finalQuote.text('" ' + quoteText + ' "');
+        finalQuote.text(quoteText);
         $("#quotes").html(finalQuote);
     }
 }
