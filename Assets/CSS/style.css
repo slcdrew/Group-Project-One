@@ -39,10 +39,12 @@ input[type="file"] {
 
 .next {
     width: 700px;
+    cursor: pointer;
 }
 
 .start {
     width: 700px;
+    cursor: pointer;
 }
 
 .polaroid {
