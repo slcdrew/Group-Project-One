@@ -32,6 +32,7 @@ p {
 }
 
 .polaroid {
+    position: relative;
     background-color: white;
     margin: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -81,18 +82,16 @@ p {
 }
 
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 780px){
     .polaroid{
-        background-color: tan;
-        width: 95%;
+        width: 100%;
         padding: 5%;
     }
     .quote{
         font-size: 16px;
     }
     .next{
-        width: 95%;
-        background-color: tan;
+        width: 100%;
     }
     .quoteContainer{
         padding: 2%;
