@@ -9,7 +9,7 @@ Project Scope:
 The “Quote Me” app provide a new, fun way to customize your photos with quotes. The end result is a polaroid style photo with a quote that matches the mood of the image the user uploaded.
 
 
-Porject diagram:
+Project diagram:
 https://wireframepro.mockflow.com/view/M0b2335c1a31199326e1d349d76aadbfd1537590417782
 
 
