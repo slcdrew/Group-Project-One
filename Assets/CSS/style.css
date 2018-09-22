@@ -81,3 +81,23 @@ p {
 }
 
 
+@media only screen and (max-width: 900px){
+    .polaroid{
+        background-color: tan;
+        width: 95%;
+        padding: 5%;
+    }
+    .quote{
+        font-size: 16px;
+    }
+    .next{
+        width: 95%;
+        background-color: tan;
+    }
+    .quoteContainer{
+        padding: 2%;
+    }
+    #angleTitle{
+        width: 150px;
+    }
+}
