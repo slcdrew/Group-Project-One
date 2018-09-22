@@ -141,15 +141,14 @@ fileUpload.addEventListener('change', function (event) {
         },
         data: formData
     }).then(function (res) {
+        console.log(res);
+        // document.getElementById('uploaded').setAttribute("src", res.data["secure_url"]);
         document.getElementById('uploaded').style.border = "2px solid black";
         $("#uploaded").attr("src", res.data["secure_url"]);
         $(".container2").hide();
         $(".selectBtn").hide();
         $("#angleTitle").show();
         $(".picContainer").show();
-        $(".reset").show();
-        $("#nextButton").show();
-        $("#backButton").show();
         document.getElementById("nextButton").style.visibility = "visible";
         document.getElementById("backButton").style.visibility = "visible";
         faceQuote(res.data.secure_url)
@@ -158,18 +157,8 @@ fileUpload.addEventListener('change', function (event) {
         console.error(err);
     });
 });
-
 $(".start").on("click", function () {
     $(".start").hide();
     $(".next").show();
     $(".selectBtn").show();
 });
-
-$(".reset").on("click", function () {
-    $(".picContainer").hide();
-    $(".selectBtn").show();
-    $(".next").show();
-    $(".reset").hide();
-    $("#nextButton").hide();
-    $("#backButton").hide();
-})
