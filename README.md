@@ -4,7 +4,7 @@ The “Quote Me” app provide a new, fun way to customize your photos with quot
 
 ## Code Languages and Programs 
 	• HTML
-	• CSS (SASS) 
+	• CSS
 	• Bootstrap
 	• JavaScript
 	• JQuery  
